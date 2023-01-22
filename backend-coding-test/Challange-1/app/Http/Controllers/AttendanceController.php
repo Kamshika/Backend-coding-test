@@ -19,6 +19,7 @@ class AttendanceController extends Controller
                 FROM attendances a
                 LEFT JOIN employees e ON a.employee_id = e.id
                 LEFT JOIN schedules s ON a.schedule_id = s.id');
+        return view('index', compact('attendanceRecords'));
     }
 
     /**

@@ -4,13 +4,19 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=3000",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@habx/ui-table": "^8.3.0",
+    "@tanstack/match-sorter-utils": "^8.7.6",
+    "@tanstack/react-table": "^8.7.6",
+    "@types/react-table": "^7.7.14",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-data-table-component": "^7.5.3",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
