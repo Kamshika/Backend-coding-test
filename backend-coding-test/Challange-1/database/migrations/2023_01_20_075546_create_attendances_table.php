@@ -17,14 +17,14 @@ return new class extends Migration
             $table->id();
 
             $table->bigInteger('employee_id')->unsigned();
-            $table->foreign('employee_id')->references('id')->on('shifts')->onDelete('cascade');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
 
             $table->bigInteger('schedule_id')->unsigned();
             $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
             
-            $table->time('check_in');
-            $table->time('check_out');
-            $table->json('description');
+            $table->dateTime('checkin');
+            $table->dateTime('checkout');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

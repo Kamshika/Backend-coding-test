@@ -16,9 +16,6 @@ return new class extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->id();
 
-            $table->bigInteger('employee_id')->unsigned();
-            $table->foreign('employee_id')->references('id')->on('shifts')->onDelete('cascade');
-            
             $table->bigInteger('shift_id')->unsigned();
             $table->foreign('shift_id')->references('id')->on('shifts')->onDelete('cascade');
 
@@ -26,9 +23,9 @@ return new class extends Migration
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
 
             $table->string('name');
-            $table->time('start_time');
-            $table->time('end_time');
-            $table->json('description');
+            $table->dateTime('start_time');
+            $table->dateTime('end_time');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
