@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Maatwebsite\Excel\Excel;
+use Maatwebsite\Excel\ExcelServiceProvider;
 
 return [
 
@@ -181,7 +183,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        ExcelServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -196,6 +198,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
     ],
+//php .\artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider"
+//php .\artisan make:import AttendanceImport --model=Attendance   
 
     /*
     |--------------------------------------------------------------------------
@@ -210,6 +214,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Excel' => Excel::class,
     ])->toArray(),
 
 ];

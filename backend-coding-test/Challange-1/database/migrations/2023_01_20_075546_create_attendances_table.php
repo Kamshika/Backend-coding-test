@@ -22,8 +22,8 @@ return new class extends Migration
             $table->bigInteger('schedule_id')->unsigned();
             $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
             
-            $table->dateTime('checkin');
-            $table->dateTime('checkout');
+            $table->dateTime('check_in');
+            $table->dateTime('check_out');
             $table->string('description')->nullable();
             $table->timestamps();
         });
