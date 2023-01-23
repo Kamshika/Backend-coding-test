@@ -19,11 +19,11 @@ return new class extends Migration
             $table->bigInteger('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
 
-            $table->string('name');
-            $table->string('quantity');
-            $table->string('cost');
-            $table->string('description');
-            $table->string('created_by');
+            $table->string('name')->nullable();
+            $table->string('quantity')->nullable();
+            $table->string('cost')->nullable();
+            $table->string('description')->nullable();
+            $table->string('created_by')->nullable();
             $table->timestamps();
         });
     }

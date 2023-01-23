@@ -19,9 +19,9 @@ return new class extends Migration
             $table->bigInteger('location_id')->unsigned();
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
 
-            $table->string('name');
-            $table->string('address');
-            $table->string('description');
+            $table->string('name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

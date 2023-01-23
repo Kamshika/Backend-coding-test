@@ -22,10 +22,10 @@ return new class extends Migration
             $table->bigInteger('company_id')->unsigned();
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
 
-            $table->string('name');
-            $table->string('address');
-            $table->string('mobile');
-            $table->string('description');
+            $table->string('name')->nullable();
+            $table->string('address')->nullable();
+            $table->string('mobile')->nullable();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
